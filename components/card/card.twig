@@ -1,0 +1,23 @@
+{%
+  set classes = [
+    'card'
+  ]
+%}
+{% set attributes = attributes|default(create_attribute()) %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="card__content">
+
+    {% if title %}
+      <div class="card__title">{{ title }}</div>
+    {% endif %}
+
+    {% if desc %}
+      <div class="card__description">{{ desc }}</div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+  </div>
+</div>
